@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="World Tiger Fitness Salem - Rated 5.0⭐ (186+ reviews). Premium fitness center in Ammapet, Salem. State-of-the-art equipment, expert trainers, flexible memberships. Join the pack!">
+  <meta name="keywords" content="World Tiger Fitness, Gym Salem, Best Gym in Ammapet, Fitness Center Salem, Luxury Gym Salem">
+  <meta name="author" content="World Tiger Fitness">
+  <meta name="theme-color" content="#0f0717">
+  <title>World Tiger Fitness | 5.0⭐ Elite Gym Salem | Ammapet</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'royal-purple': '#2D1B4E',
+            'deep-purple': '#1A0F2E',
+            'vibrant-gold': '#FFD700',
+            'dark-gold': '#DAA520',
+            'electric-orange': '#FF6B35',
+            'charcoal-dark': '#0F0717',
+          },
+          fontFamily: {
+            'dm': ['DM Sans', 'sans-serif'],
+            'oswald': ['Oswald', 'sans-serif'],
+          },
+          animation: {
+            'fade-up': 'fadeUp 0.6s ease forwards',
+            'float': 'float 3s ease-in-out infinite',
+            'glow-pulse': 'glowPulse 2s ease-in-out infinite',
+            'slide-in': 'slideIn 0.5s ease forwards',
+          },
+          keyframes: {
+            fadeUp: {
+              '0%': { opacity: '0', transform: 'translateY(30px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-10px)' },
+            },
+            glowPulse: {
+              '0%, 100%': { textShadow: '0 0 5px rgba(255, 215, 0, 0.3)' },
+              '50%': { textShadow: '0 0 25px rgba(255, 215, 0, 0.8)' },
+            },
+            slideIn: {
+              '0%': { opacity: '0', transform: 'translateX(-20px)' },
+              '100%': { opacity: '1', transform: 'translateX(0)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    /* Custom styles */
+    body {
+      background: #0F0717;
+      font-family: 'DM Sans', sans-serif;
+    }
+    
+    /* Glassmorphism Navbar */
+    .glass-nav {
+      background: rgba(15, 7, 23, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    }
+    
+    /* Glass card effect */
+    .glass-card {
+      background: rgba(45, 27, 78, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 215, 0, 0.15);
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    
+    .glass-card:hover {
+      border-color: #FFD700;
+      box-shadow: 0 20px 35px -12px rgba(255, 215, 0, 0.25);
+      transform: translateY(-5px);
+    }
+    
+    /* Featured gradient card */
+    .featured-card {
+      background: linear-gradient(135deg, #2D1B4E 0%, #1A0F2E 100%);
+      border: 2px solid #FFD700;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .featured-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255, 215, 0, 0.1), transparent 70%);
+      animation: rotate 4s linear infinite;
+    }
+    
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    
+    .featured-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 25px 40px -12px rgba(255, 215, 0, 0.4);
+    }
+    
+    /* Quick Look overlay */
+    .quick-look {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(15, 7, 23, 0.98), rgba(45, 27, 78, 0.98));
+      backdrop-filter: blur(12px);
+      border-radius: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 1.8rem;
+      opacity: 0;
+      transform: translateY(15px);
+      transition: all 0.3s ease;
+      pointer-events: none;
+      z-index: 10;
+      border: 2px solid #FFD700;
+    }
+    
+    .pricing-card:hover .quick-look {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    
+    .quick-look-title {
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #FFD700;
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .quick-look-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(255, 215, 0, 0.3);
+    }
+    
+    .quick-look ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+    
+    .quick-look ul li {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.85rem;
+      color: #E8E0F5;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+    }
+    
+    .quick-look ul li:last-child {
+      border-bottom: none;
+    }
+    
+    .quick-look ul li i {
+      color: #FFD700;
+      width: 20px;
+    }
+    
+    .quick-look ul li.unavailable {
+      color: #6A5A7A;
+    }
+    
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #1A0F2E;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #FFD700;
+      border-radius: 10px;
+    }
+    
+    /* Floating CTA pulse */
+    @keyframes goldPulse {
+      0% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.5); }
+      70% { box-shadow: 0 0 0 15px rgba(255, 215, 0, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0); }
+    }
+    
+    .floating-cta {
+      animation: goldPulse 2s infinite;
+    }
+    
+    /* Gallery hover */
+    .gallery-img {
+      transition: transform 0.5s ease;
+    }
+    
+    .gallery-card:hover .gallery-img {
+      transform: scale(1.05);
+    }
+    
+    /* Review scroll */
+    .reviews-track {
+      display: flex;
+      gap: 1.5rem;
+      width: max-content;
+      animation: scroll-reviews 35s linear infinite;
+    }
+    
+    .reviews-track:hover {
+      animation-play-state: paused;
+    }
+    
+    @keyframes scroll-reviews {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    
+    /* Mobile menu */
+    .mobile-menu {
+      display: none;
+    }
+    
+    .mobile-menu.active {
+      display: flex;
+    }
+    
+    @media (max-width: 768px) {
+      .desktop-menu {
+        display: none;
+      }
+      .mobile-menu-btn {
+        display: block;
+      }
+    }
+    
+    @media (min-width: 769px) {
+      .mobile-menu-btn {
+        display: none;
+      }
+    }
+    
+    /* Button styles */
+    .btn-primary {
+      background: linear-gradient(135deg, #FFD700, #FFA500);
+      color: #1A0F2E;
+      font-weight: bold;
+      transition: all 0.3s;
+    }
+    
+    .btn-primary:hover {
+      transform: scale(1.05);
+      box-shadow: 0 5px 20px rgba(255, 215, 0, 0.4);
+    }
+    
+    .btn-outline-gold {
+      border: 2px solid #FFD700;
+      color: #FFD700;
+      transition: all 0.3s;
+    }
+    
+    .btn-outline-gold:hover {
+      background: rgba(255, 215, 0, 0.1);
+      transform: scale(1.02);
+    }
+  </style>
+</head>
+<body class="bg-charcoal-dark text-gray-200">
+
+  <!-- Sticky Navigation -->
+  <nav class="glass-nav fixed top-0 left-0 right-0 z-50 py-3 md:py-4">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center">
+        <!-- Logo with Tiger Icon -->
+        <div class="flex items-center gap-2 group cursor-pointer">
+          <i class="fas fa-tiger text-vibrant-gold text-2xl group-hover:animate-pulse"></i>
+          <span class="font-oswald font-extrabold text-xl md:text-2xl tracking-wider bg-gradient-to-r from-white to-vibrant-gold bg-clip-text text-transparent">WORLD<span class="text-vibrant-gold">TIGER</span></span>
+        </div>
+        
+        <!-- Desktop Menu -->
+        <div class="desktop-menu flex items-center gap-8">
+          <a href="#home" class="font-dm font-medium text-sm text-gray-300 hover:text-vibrant-gold transition duration-200 relative group">
+            Home <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-vibrant-gold transition-all group-hover:w-full"></span>
+          </a>
+          <a href="#packages" class="font-dm font-medium text-sm text-gray-300 hover:text-vibrant-gold transition">Packages</a>
+          <a href="#about" class="font-dm font-medium text-sm text-gray-300 hover:text-vibrant-gold transition">About</a>
+          <a href="#gallery" class="font-dm font-medium text-sm text-gray-300 hover:text-vibrant-gold transition">Gallery</a>
+          <a href="#reviews" class="font-dm font-medium text-sm text-gray-300 hover:text-vibrant-gold transition">Reviews</a>
+          <a href="#contact" class="font-dm font-medium text-sm text-gray-300 hover:text-vibrant-gold transition">Contact</a>
+        </div>
+        
+        <!-- CTA Button -->
+        <a href="#contact" class="desktop-menu btn-primary font-oswald text-sm px-5 py-2 rounded-full transition hover:scale-105">
+          <i class="fas fa-dumbbell mr-2"></i> Join Now
+        </a>
+        
+        <!-- Mobile Menu Button -->
+        <button id="mobileMenuBtn" class="mobile-menu-btn text-gray-300 text-2xl">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Mobile Menu Dropdown -->
+    <div id="mobileMenu" class="mobile-menu flex-col bg-deep-purple/98 backdrop-blur-lg border-t border-vibrant-gold/20 px-4 py-4 gap-3 shadow-lg">
+      <a href="#home" class="py-2 text-gray-300 hover:text-vibrant-gold transition font-dm">Home</a>
+      <a href="#packages" class="py-2 text-gray-300 hover:text-vibrant-gold transition font-dm">Packages</a>
+      <a href="#about" class="py-2 text-gray-300 hover:text-vibrant-gold transition font-dm">About</a>
+      <a href="#gallery" class="py-2 text-gray-300 hover:text-vibrant-gold transition font-dm">Gallery</a>
+      <a href="#reviews" class="py-2 text-gray-300 hover:text-vibrant-gold transition font-dm">Reviews</a>
+      <a href="#contact" class="py-2 text-gray-300 hover:text-vibrant-gold transition font-dm">Contact</a>
+      <a href="#contact" class="btn-primary text-center py-2 rounded-full mt-2">Join Now</a>
+    </div>
+  </nav>
+
+  <!-- Floating Call & WhatsApp Buttons -->
+  <div class="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
+    <a href="https://wa.me/919894803804?text=Hi%21%20I%20want%20to%20join%20World%20Tiger%20Fitness" target="_blank" class="bg-green-600 rounded-full w-12 h-12 flex items-center justify-center shadow-lg hover:scale-110 transition-all duration-200">
+      <i class="fab fa-whatsapp text-white text-xl"></i>
+    </a>
+    <a href="tel:09894803804" class="btn-primary rounded-full w-12 h-12 flex items-center justify-center shadow-lg floating-cta hover:scale-110 transition-all duration-200">
+      <i class="fas fa-phone-alt text-deep-purple text-xl"></i>
+    </a>
+  </div>
+
+  <!-- Hero Section -->
+  <section id="home" class="min-h-screen flex items-center pt-16 md:pt-20 relative overflow-hidden">
+    <!-- Animated background elements -->
+    <div class="absolute inset-0 overflow-hidden">
+      <div class="absolute top-20 left-10 w-64 h-64 bg-vibrant-gold/5 rounded-full blur-3xl animate-pulse"></div>
+      <div class="absolute bottom-20 right-10 w-80 h-80 bg-vibrant-gold/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
+    </div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 relative z-10">
+      <div class="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <!-- Left: Hero Image with animation -->
+        <div class="relative rounded-2xl overflow-hidden shadow-2xl group animate-float">
+          <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="World Tiger Fitness Gym Action" class="w-full h-[350px] md:h-[500px] object-cover transition-transform duration-500 group-hover:scale-105">
+          <div class="absolute inset-0 bg-gradient-to-tr from-deep-purple/60 via-transparent to-vibrant-gold/20"></div>
+          <div class="absolute bottom-4 left-4 bg-deep-purple/80 backdrop-blur-sm rounded-lg px-3 py-1.5 shadow-md border border-vibrant-gold/30">
+            <span class="text-vibrant-gold text-xs font-bold"><i class="fas fa-fire"></i> 500+ Active Members</span>
+          </div>
+        </div>
+        
+        <!-- Right: Content -->
+        <div class="text-center md:text-left">
+          <div class="inline-flex items-center gap-2 bg-vibrant-gold/10 border border-vibrant-gold/30 rounded-full px-4 py-1.5 mb-6 animate-fade-up">
+            <i class="fas fa-star text-vibrant-gold text-xs"></i>
+            <span class="text-vibrant-gold text-xs font-bold tracking-wide">RATED 5.0 ★ (186+ REVIEWS)</span>
+          </div>
+          <h1 class="font-oswald font-black text-5xl md:text-6xl lg:text-7xl leading-tight mb-4 animate-fade-up">
+            WORLD <span class="text-vibrant-gold">TIGER</span><br>FITNESS
+          </h1>
+          <p class="text-2xl md:text-3xl font-oswald font-bold bg-gradient-to-r from-vibrant-gold to-electric-orange bg-clip-text text-transparent mb-4 animate-glow-pulse">UNLEASH THE BEAST</p>
+          <p class="text-gray-400 text-base md:text-lg mb-6 max-w-lg mx-auto md:mx-0 animate-fade-up">
+            Salem's most premium fitness destination in Ammapet. State-of-the-art equipment, elite trainers, and a community that pushes you to your limits.
+          </p>
+          <div class="flex flex-wrap gap-4 justify-center md:justify-start animate-fade-up">
+            <a href="#contact" class="inline-flex items-center gap-2 btn-primary text-deep-purple font-oswald font-bold px-8 py-3 rounded-full transition-all duration-200 shadow-lg">
+              <i class="fas fa-arrow-right"></i> Join The Pack
+            </a>
+            <a href="#packages" class="inline-flex items-center gap-2 btn-outline-gold font-dm font-semibold px-8 py-3 rounded-full transition-all duration-200">
+              <i class="fas fa-tags"></i> View Packages
+            </a>
+          </div>
+          <div class="flex gap-8 justify-center md:justify-start mt-8 pt-6 border-t border-gray-800 animate-fade-up">
+            <div><span class="font-oswald font-bold text-2xl text-vibrant-gold">500+</span><p class="text-xs text-gray-500 uppercase tracking-wide">Active Members</p></div>
+            <div><span class="font-oswald font-bold text-2xl text-vibrant-gold">10+</span><p class="text-xs text-gray-500 uppercase tracking-wide">Expert Trainers</p></div>
+            <div><span class="font-oswald font-bold text-2xl text-vibrant-gold">5.0</span><p class="text-xs text-gray-500 uppercase tracking-wide">Google Rating</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About / Features Section -->
+  <section id="about" class="py-20 bg-deep-purple">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <span class="text-vibrant-gold font-oswald font-bold text-sm uppercase tracking-wider">Why Choose Us</span>
+        <h2 class="font-oswald font-black text-3xl md:text-4xl mt-2">The <span class="text-vibrant-gold">Premium</span> Fitness Experience</h2>
+        <p class="text-gray-400 mt-4 max-w-2xl mx-auto font-dm">World Tiger Fitness isn't just a gym — it's a lifestyle transformation center designed for results.</p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="glass-card rounded-2xl p-6 text-center">
+          <div class="w-16 h-16 bg-vibrant-gold/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-dumbbell text-vibrant-gold text-2xl"></i>
+          </div>
+          <h3 class="font-oswald font-bold text-xl text-white mb-2">Premium Equipment</h3>
+          <p class="text-gray-400 text-sm font-dm">Commercial-grade machines, Olympic weights, and functional training zones.</p>
+        </div>
+        <div class="glass-card rounded-2xl p-6 text-center">
+          <div class="w-16 h-16 bg-vibrant-gold/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-chalkboard-user text-vibrant-gold text-2xl"></i>
+          </div>
+          <h3 class="font-oswald font-bold text-xl text-white mb-2">Elite Coaches</h3>
+          <p class="text-gray-400 text-sm font-dm">Certified personal trainers with proven track records in transformation.</p>
+        </div>
+        <div class="glass-card rounded-2xl p-6 text-center">
+          <div class="w-16 h-16 bg-vibrant-gold/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-spa text-vibrant-gold text-2xl"></i>
+          </div>
+          <h3 class="font-oswald font-bold text-xl text-white mb-2">Recovery Zone</h3>
+          <p class="text-gray-400 text-sm font-dm">Steam bath, massage chairs, and cryotherapy for optimal recovery.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Packages Section with Quick Look -->
+  <section id="packages" class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <span class="text-vibrant-gold font-oswald font-bold text-sm uppercase tracking-wider">Membership Plans</span>
+        <h2 class="font-oswald font-black text-3xl md:text-4xl mt-2">Choose Your <span class="text-vibrant-gold">Path</span></h2>
+        <p class="text-gray-400 mt-4">Hover over any plan to see what's included</p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8 items-center">
+        <!-- Monthly -->
+        <div class="glass-card rounded-2xl p-8 pricing-card relative">
+          <div class="text-center">
+            <i class="fas fa-calendar-alt text-vibrant-gold text-4xl mb-3"></i>
+            <h3 class="font-oswald font-bold text-2xl text-white">Monthly</h3>
+            <div class="mt-4"><span class="font-oswald font-extrabold text-4xl text-vibrant-gold">₹1,499</span><span class="text-gray-400">/month</span></div>
+            <a href="#contact" class="block mt-6 bg-transparent border border-vibrant-gold text-vibrant-gold font-oswald font-bold py-2.5 rounded-full transition hover:bg-vibrant-gold hover:text-deep-purple">Get Started</a>
+          </div>
+          <div class="quick-look">
+            <div class="quick-look-title"><i class="fas fa-bolt"></i> Quick Look</div>
+            <ul>
+              <li><i class="fas fa-check-circle"></i> Full Gym Access</li>
+              <li><i class="fas fa-check-circle"></i> Locker Facility</li>
+              <li><i class="fas fa-check-circle"></i> Free Wi-Fi</li>
+              <li class="unavailable"><i class="fas fa-circle-xmark"></i> Steam Bath</li>
+              <li class="unavailable"><i class="fas fa-circle-xmark"></i> Diet Plan</li>
+              <li class="unavailable"><i class="fas fa-circle-xmark"></i> Personal Training</li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Annual Featured -->
+        <div class="featured-card rounded-2xl p-8 pricing-card relative text-white transform scale-105 shadow-xl">
+          <div class="absolute -top-3 right-4 bg-vibrant-gold text-deep-purple text-xs font-bold px-3 py-1 rounded-full z-20">🔥 BEST VALUE</div>
+          <div class="text-center relative z-20">
+            <i class="fas fa-crown text-vibrant-gold text-4xl mb-3"></i>
+            <h3 class="font-oswald font-bold text-2xl text-white">Annual</h3>
+            <div class="mt-4"><span class="font-oswald font-extrabold text-4xl text-vibrant-gold">₹9,999</span><span class="text-gray-300">/year</span></div>
+            <p class="text-vibrant-gold/80 text-xs mt-1">Save 44% vs monthly</p>
+            <a href="#contact" class="block mt-6 btn-primary text-deep-purple font-oswald font-bold py-2.5 rounded-full transition hover:scale-105">Join Annual</a>
+          </div>
+          <div class="quick-look" style="background: linear-gradient(135deg, rgba(15, 7, 23, 0.98), rgba(45, 27, 78, 0.98)); border: 2px solid #FFD700;">
+            <div class="quick-look-title"><i class="fas fa-bolt"></i> Quick Look</div>
+            <ul>
+              <li><i class="fas fa-check-circle"></i> Full Gym Access (7 days)</li>
+              <li><i class="fas fa-check-circle"></i> Personal Locker</li>
+              <li><i class="fas fa-check-circle"></i> Steam Bath Unlimited</li>
+              <li><i class="fas fa-check-circle"></i> Custom Diet Plan</li>
+              <li><i class="fas fa-check-circle"></i> Free Fitness Assessment</li>
+              <li><i class="fas fa-check-circle"></i> 2 Guest Passes/Month</li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Personal Training -->
+        <div class="glass-card rounded-2xl p-8 pricing-card relative">
+          <div class="text-center">
+            <i class="fas fa-chalkboard-user text-vibrant-gold text-4xl mb-3"></i>
+            <h3 class="font-oswald font-bold text-2xl text-white">Personal Training</h3>
+            <div class="mt-4"><span class="font-oswald font-extrabold text-4xl text-vibrant-gold">₹4,999</span><span class="text-gray-400">/month</span></div>
+            <a href="#contact" class="block mt-6 bg-transparent border border-vibrant-gold text-vibrant-gold font-oswald font-bold py-2.5 rounded-full transition hover:bg-vibrant-gold hover:text-deep-purple">Book Trainer</a>
+          </div>
+          <div class="quick-look">
+            <div class="quick-look-title"><i class="fas fa-bolt"></i> Quick Look</div>
+            <ul>
+              <li><i class="fas fa-check-circle"></i> 1-on-1 Coaching</li>
+              <li><i class="fas fa-check-circle"></i> Full Gym Access</li>
+              <li><i class="fas fa-check-circle"></i> Steam Bath Access</li>
+              <li><i class="fas fa-check-circle"></i> Custom Diet & Workout</li>
+              <li><i class="fas fa-check-circle"></i> Weekly Progress Tracking</li>
+              <li><i class="fas fa-check-circle"></i> Priority Booking</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Image Gallery Section -->
+  <section id="gallery" class="py-20 bg-deep-purple">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <span class="text-vibrant-gold font-oswald font-bold text-sm uppercase tracking-wider">Our Facility</span>
+        <h2 class="font-oswald font-black text-3xl md:text-4xl mt-2">Experience <span class="text-vibrant-gold">#TigerFitness</span></h2>
+      </div>
+      
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="gallery-card rounded-2xl overflow-hidden glass-card p-0">
+          <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Weight Training" class="gallery-img w-full h-64 object-cover">
+          <div class="p-3 text-center"><i class="fas fa-dumbbell text-vibrant-gold"></i> <span class="text-sm ml-1 text-gray-300">Strength Zone</span></div>
+        </div>
+        <div class="gallery-card rounded-2xl overflow-hidden glass-card p-0">
+          <img src="https://images.unsplash.com/photo-1593079831268-3381b0db4a77?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Cardio Area" class="gallery-img w-full h-64 object-cover">
+          <div class="p-3 text-center"><i class="fas fa-heartbeat text-vibrant-gold"></i> <span class="text-sm ml-1 text-gray-300">Cardio Deck</span></div>
+        </div>
+        <div class="gallery-card rounded-2xl overflow-hidden glass-card p-0">
+          <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Functional Training" class="gallery-img w-full h-64 object-cover">
+          <div class="p-3 text-center"><i class="fas fa-fist-raised text-vibrant-gold"></i> <span class="text-sm ml-1 text-gray-300">Functional Zone</span></div>
+        </div>
+        <div class="gallery-card rounded-2xl overflow-hidden glass-card p-0">
+          <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Luxury Locker Room" class="gallery-img w-full h-64 object-cover">
+          <div class="p-3 text-center"><i class="fas fa-lock text-vibrant-gold"></i> <span class="text-sm ml-1 text-gray-300">Premium Lockers</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews Section with Infinite Scroll -->
+  <section id="reviews" class="py-20 overflow-hidden">
+    <div class="text-center mb-12">
+      <span class="text-vibrant-gold font-oswald font-bold text-sm uppercase tracking-wider">Member Stories</span>
+      <h2 class="font-oswald font-black text-3xl md:text-4xl mt-2">What Our <span class="text-vibrant-gold">Tigers</span> Say</h2>
+    </div>
+    
+    <div class="relative overflow-hidden">
+      <div class="reviews-track flex gap-6" style="width: max-content;">
+        <div class="glass-card rounded-xl p-6 w-80 flex-shrink-0">
+          <div class="flex text-vibrant-gold mb-3"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <p class="text-gray-300 text-sm italic">"Best decision I made! Lost 15kg in 4 months. The trainers are world-class."</p>
+          <div class="flex items-center gap-3 mt-4 pt-3 border-t border-gray-700">
+            <div class="w-10 h-10 rounded-full bg-vibrant-gold/20 flex items-center justify-center"><i class="fas fa-user text-vibrant-gold"></i></div>
+            <div><h4 class="font-oswald font-bold text-sm text-white">Arjun S.</h4><p class="text-gray-500 text-xs">Annual Member</p></div>
+          </div>
+        </div>
+        <div class="glass-card rounded-xl p-6 w-80 flex-shrink-0">
+          <div class="flex text-vibrant-gold mb-3"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <p class="text-gray-300 text-sm italic">"Premium equipment and steam bath after workout is amazing. Highly recommend!"</p>
+          <div class="flex items-center gap-3 mt-4 pt-3 border-t border-gray-700">
+            <div class="w-10 h-10 rounded-full bg-vibrant-gold/20 flex items-center justify-center"><i class="fas fa-user text-vibrant-gold"></i></div>
+            <div><h4 class="font-oswald font-bold text-sm text-white">Priya K.</h4><p class="text-gray-500 text-xs">Personal Training</p></div>
+          </div>
+        </div>
+        <div class="glass-card rounded-xl p-6 w-80 flex-shrink-0">
+          <div class="flex text-vibrant-gold mb-3"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <p class="text-gray-300 text-sm italic">"The community here pushes you to be better every day. Best gym in Salem!"</p>
+          <div class="flex items-center gap-3 mt-4 pt-3 border-t border-gray-700">
+            <div class="w-10 h-10 rounded-full bg-vibrant-gold/20 flex items-center justify-center"><i class="fas fa-user text-vibrant-gold"></i></div>
+            <div><h4 class="font-oswald font-bold text-sm text-white">Vikram R.</h4><p class="text-gray-500 text-xs">Annual Member</p></div>
+          </div>
+        </div>
+        <!-- Duplicate for seamless loop -->
+        <div class="glass-card rounded-xl p-6 w-80 flex-shrink-0">
+          <div class="flex text-vibrant-gold mb-3"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <p class="text-gray-300 text-sm italic">"Best decision I made! Lost 15kg in 4 months. The trainers are world-class."</p>
+          <div class="flex items-center gap-3 mt-4 pt-3 border-t border-gray-700">
+            <div class="w-10 h-10 rounded-full bg-vibrant-gold/20 flex items-center justify-center"><i class="fas fa-user text-vibrant-gold"></i></div>
+            <div><h4 class="font-oswald font-bold text-sm text-white">Arjun S.</h4><p class="text-gray-500 text-xs">Annual Member</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 bg-deep-purple">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <span class="text-vibrant-gold font-oswald font-bold text-sm uppercase tracking-wider">Get In Touch</span>
+        <h2 class="font-oswald font-black text-3xl md:text-4xl mt-2">Start Your <span class="text-vibrant-gold">Transformation</span></h2>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="space-y-6">
+          <div class="glass-card rounded-2xl p-6">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-vibrant-gold/10 rounded-xl flex items-center justify-center"><i class="fas fa-map-marker-alt text-vibrant-gold text-xl"></i></div>
+              <div><h3 class="font-oswald font-bold text-white">Address</h3><p class="text-gray-400 text-sm mt-1">Level II - A & B, HDFC Bank Upstairs, 576, Orange V Square's, TVK Rd, Ammapet, Salem, Tamil Nadu 636003</p></div>
+            </div>
+          </div>
+          <div class="glass-card rounded-2xl p-6">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-vibrant-gold/10 rounded-xl flex items-center justify-center"><i class="fas fa-phone text-vibrant-gold text-xl"></i></div>
+              <div><h3 class="font-oswald font-bold text-white">Phone</h3><p class="text-gray-400 text-sm"><a href="tel:09894803804" class="hover:text-vibrant-gold">098948 03804</a></p><p class="text-gray-400 text-sm"><a href="https://wa.me/919894803804" class="hover:text-vibrant-gold"><i class="fab fa-whatsapp"></i> WhatsApp Enquiry</a></p></div>
+            </div>
+          </div>
+          <div class="glass-card rounded-2xl p-6">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-vibrant-gold/10 rounded-xl flex items-center justify-center"><i class="fas fa-clock text-vibrant-gold text-xl"></i></div>
+              <div><h3 class="font-oswald font-bold text-white">Gym Hours</h3><p class="text-gray-400 text-sm">Monday – Sunday: 5:30 AM – 10:30 PM</p><p class="text-green-500 text-xs mt-1"><i class="fas fa-circle"></i> Open Now</p></div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="glass-card rounded-2xl overflow-hidden">
+          <iframe title="World Tiger Fitness Location" loading="lazy" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=Level+II+A+%26+B+HDFC+Bank+Upstairs+576+Orange+V+Square+TVK+Road+Ammapet+Salem+Tamil+Nadu+636003&center=11.6708,78.1471&zoom=16" class="w-full h-80 md:h-[320px]" allowfullscreen=""></iframe>
+          <div class="p-4 border-t border-gray-700 text-center"><a href="https://www.google.com/maps/dir/?api=1&destination=Level+II+A+%26+B,+HDFC+Bank+Upstairs,+576,+Orange+V+Square's,+TVK+Rd,+Ammapet,+Salem,+Tamil+Nadu+636003" target="_blank" class="text-vibrant-gold text-sm hover:underline"><i class="fas fa-directions"></i> Get Directions</a></div>
+        </div>
+      </div>
+      
+      <div class="text-center mt-12">
+        <a href="tel:09894803804" class="inline-flex items-center gap-2 btn-primary text-deep-purple font-oswald font-bold px-8 py-3 rounded-full transition-all duration-200 shadow-lg"><i class="fas fa-calendar-check"></i> Book Free Trial</a>
+        <p class="text-gray-500 text-xs mt-4">Limited slots available • First come first serve • Unleash the beast today</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 border-t border-gray-800 text-center bg-charcoal-dark">
+    <div class="max-w-7xl mx-auto px-4">
+      <p class="text-gray-400 text-sm font-dm">© 2025 World Tiger Fitness | Salem's Premier Fitness Center</p>
+      <p class="text-gray-500 text-xs mt-2 font-dm"> Level II - A & B, HDFC Bank Upstairs, 576, Orange V Square's, TVK Rd, Ammapet, Salem, Tamil Nadu 636003</p>
+    </div>
+  </footer>
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HealthClub",
+    "name": "World Tiger Fitness",
+    "image": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b",
+    "description": "Premium fitness center in Ammapet, Salem with 5-star rating. State-of-the-art equipment, expert trainers, steam bath, and flexible memberships.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Level II - A & B, HDFC Bank Upstairs, 576, Orange V Square's, TVK Rd, Ammapet",
+      "addressLocality": "Salem",
+      "addressRegion": "Tamil Nadu",
+      "postalCode": "636003",
+      "addressCountry": "IN"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 11.6708, "longitude": 78.1471 },
+    "telephone": "+919894803804",
+    "openingHoursSpecification": [{ "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "05:30", "closes": "22:30" }],
+    "priceRange": "₹₹",
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "186" }
+  }
+  </script>
+
+  <script>
+    // Mobile menu toggle
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('active');
+    });
+    
+    // Close mobile menu on link click
+    document.querySelectorAll('#mobileMenu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+      });
+    });
+    
+    // Smooth scroll for all anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href');
+        if (targetId === "#" || targetId === "") return;
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          e.preventDefault();
+          targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          mobileMenu.classList.remove('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
